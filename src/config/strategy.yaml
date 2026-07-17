@@ -1,0 +1,11 @@
+strategy:
+
+  timeframe: 1h
+
+  minimum_score: 70
+
+  use_volume_filter: false
+
+  use_market_regime: false
+
+  use_multi_timeframe: false
