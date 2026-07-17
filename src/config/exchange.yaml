@@ -1,0 +1,13 @@
+binance:
+
+  testnet: false
+
+  recv_window: 60000
+
+  timeout: 30
+
+  websocket: true
+
+  reconnect: true
+
+  candle_limit: 1000
