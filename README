@@ -14,3 +14,7 @@ Um rob√¥ de trading quantitativo desenvolvido em Python para automatizar estrat√
    ```bash
    git clone https://github.com/Optimus80/Robo-Trader.git
    cd Robo-Trader/src
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+pip install -r requirements.txt
