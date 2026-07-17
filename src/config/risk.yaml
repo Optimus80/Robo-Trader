@@ -1,0 +1,15 @@
+risk:
+
+  risk_per_trade: 1.0
+
+  max_daily_drawdown: 5
+
+  max_weekly_drawdown: 12
+
+  max_positions: 5
+
+  use_atr_stop: false
+
+  stop_loss_percent: 5
+
+  trailing_percent: 3
