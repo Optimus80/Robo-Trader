@@ -2,11 +2,13 @@ class Application:
 
     def __init__(self):
 
-        self.container = None
+self.container.register("market_data",MarketData())
 
-        self.event_bus = None
+self.container.register("strategy",StrategyEngine())
 
-        self.state = None
+self.container.register("risk",RiskManager())
+
+self.container.register("execution",ExecutionEngine())
 
     def initialize(self):
 
@@ -16,7 +18,9 @@ class Application:
 
         from core.dependency_container import Container
 
-        self.container = Container()
+        try: self.container = Container()
+
+except Exception as e: logger.error(e) shutdown()
 
         self.event_bus = EventBus()
 
@@ -26,4 +30,4 @@ class Application:
 
         self.container.register("state", self.state)
 
-        print("Quant Bot V2 Initialized")
+       logger.info("Quant Bot V2 Initialized")
