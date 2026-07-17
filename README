@@ -1,0 +1,16 @@
+# Robo-Trader
+
+Um robô de trading quantitativo desenvolvido em Python para automatizar estratégias de negociação.
+
+## 🚀 Instalação
+
+### Pré-requisitos
+- Python 3.9 ou superior
+- Git instalado
+- Pip atualizado
+
+### Passos
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Optimus80/Robo-Trader.git
+   cd Robo-Trader/src
