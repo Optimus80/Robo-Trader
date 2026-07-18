@@ -1,33 +1,33 @@
+from src.core.dependency_container import Container
+from src.core.event_bus import EventBus
+from src.core.bot_state import BotState
+
+from common.logger import logger
+
+
 class Application:
 
     def __init__(self):
 
-self.container.register("market_data",MarketData())
+        self.container = Container()
+        self.event_bus = EventBus()
+        self.state = BotState()
 
-self.container.register("strategy",StrategyEngine())
+    def register_services(self):
 
-self.container.register("risk",RiskManager())
-
-self.container.register("execution",ExecutionEngine())
+        self.container.register("event_bus", self.event_bus)
+        self.container.register("state", self.state)
 
     def initialize(self):
 
-        from core.event_bus import EventBus
+        logger.info("Inicializando Quant Bot...")
 
-        from core.bot_state import BotState
+        self.register_services()
 
-        from core.dependency_container import Container
+        logger.info("Serviços registrados.")
 
-        try: self.container = Container()
+    def run(self):
 
-except Exception as e: logger.error(e) shutdown()
+        self.initialize()
 
-        self.event_bus = EventBus()
-
-        self.state = BotState()
-
-        self.container.register("event_bus", self.event_bus)
-
-        self.container.register("state", self.state)
-
-       logger.info("Quant Bot V2 Initialized")
+        logger.info("Bot iniciado.")
