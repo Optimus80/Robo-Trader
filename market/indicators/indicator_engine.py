@@ -1,37 +1,16 @@
 class IndicatorEngine:
 
-    def __init__(
+    def __init__(self):
+        self.providers = {}
 
-        self,
+    def register(self, name, provider):
+        self.providers[name] = provider
 
-        market_data,
+    def calculate(self, candles):
 
-        cache
+        result = {}
 
-    ):
+        for name, provider in self.providers.items():
+            result[name] = provider.calculate(candles)
 
-        self.market = market_data
-
-        self.cache = cache
-
-    def update(
-
-        self,
-
-        symbol,
-
-        timeframe
-
-    ):
-
-        candles = self.market.history(symbol)
-
-        self.calculate_all(
-
-            symbol,
-
-            timeframe,
-
-            candles
-
-        )
+        return result
