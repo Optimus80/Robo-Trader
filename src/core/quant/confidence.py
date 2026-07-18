@@ -1,0 +1,7 @@
+Compra
+
+↓
+
+Confiança
+
+92%
